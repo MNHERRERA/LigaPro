@@ -3,6 +3,7 @@ using LigaPro.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LigaPro.Migrations
 {
     [DbContext(typeof(LigaProContext))]
-    partial class LigaProContextModelSnapshot : ModelSnapshot
+    [Migration("20250501034116_Jugadpres")]
+    partial class Jugadpres
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,8 +87,8 @@ namespace LigaPro.Migrations
                         {
                             EquipoId = 3,
                             Descripcion = "Equipo de Guayaquil, conocido como Emel. Club con una historia reciente en el fútbol ecuatoriano.",
-                            LogoUrl = "/Logos/emele.png",
-                            Nombre = "Emelec",
+                            LogoUrl = "/Logos/emel.png",
+                            Nombre = "Emel",
                             PartidosEmpatados = 3,
                             PartidosGanados = 1,
                             PartidosJugados = 0,
@@ -95,7 +98,7 @@ namespace LigaPro.Migrations
                         {
                             EquipoId = 4,
                             Descripcion = "Equipo de Quito, conocido como Aucas, uno de los equipos históricos del fútbol ecuatoriano.",
-                            LogoUrl = "/Logos/auca.png",
+                            LogoUrl = "/Logos/aucas.png",
                             Nombre = "Aucas",
                             PartidosEmpatados = 2,
                             PartidosGanados = 5,

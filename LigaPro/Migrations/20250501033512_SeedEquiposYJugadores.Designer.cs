@@ -3,6 +3,7 @@ using LigaPro.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LigaPro.Migrations
 {
     [DbContext(typeof(LigaProContext))]
-    partial class LigaProContextModelSnapshot : ModelSnapshot
+    [Migration("20250501033512_SeedEquiposYJugadores")]
+    partial class SeedEquiposYJugadores
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,28 +82,6 @@ namespace LigaPro.Migrations
                             PartidosGanados = 4,
                             PartidosJugados = 0,
                             PartidosPerdidos = 2
-                        },
-                        new
-                        {
-                            EquipoId = 3,
-                            Descripcion = "Equipo de Guayaquil, conocido como Emel. Club con una historia reciente en el fútbol ecuatoriano.",
-                            LogoUrl = "/Logos/emele.png",
-                            Nombre = "Emelec",
-                            PartidosEmpatados = 3,
-                            PartidosGanados = 1,
-                            PartidosJugados = 0,
-                            PartidosPerdidos = 4
-                        },
-                        new
-                        {
-                            EquipoId = 4,
-                            Descripcion = "Equipo de Quito, conocido como Aucas, uno de los equipos históricos del fútbol ecuatoriano.",
-                            LogoUrl = "/Logos/auca.png",
-                            Nombre = "Aucas",
-                            PartidosEmpatados = 2,
-                            PartidosGanados = 5,
-                            PartidosJugados = 0,
-                            PartidosPerdidos = 3
                         });
                 });
 
@@ -141,96 +122,6 @@ namespace LigaPro.Migrations
                     b.HasIndex("EquipoId");
 
                     b.ToTable("Jugador");
-
-                    b.HasData(
-                        new
-                        {
-                            JugadorId = 1,
-                            Asistencias = 0,
-                            EquipoId = 1,
-                            Goles = 15,
-                            Nombre = "Carlos Sánchez",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        },
-                        new
-                        {
-                            JugadorId = 2,
-                            Asistencias = 0,
-                            EquipoId = 1,
-                            Goles = 10,
-                            Nombre = "Javier Pérez",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        },
-                        new
-                        {
-                            JugadorId = 3,
-                            Asistencias = 0,
-                            EquipoId = 2,
-                            Goles = 20,
-                            Nombre = "Luis González",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        },
-                        new
-                        {
-                            JugadorId = 4,
-                            Asistencias = 0,
-                            EquipoId = 2,
-                            Goles = 12,
-                            Nombre = "Fernando Díaz",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        },
-                        new
-                        {
-                            JugadorId = 5,
-                            Asistencias = 0,
-                            EquipoId = 3,
-                            Goles = 8,
-                            Nombre = "José Martínez",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        },
-                        new
-                        {
-                            JugadorId = 6,
-                            Asistencias = 0,
-                            EquipoId = 3,
-                            Goles = 5,
-                            Nombre = "Miguel Silva",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        },
-                        new
-                        {
-                            JugadorId = 7,
-                            Asistencias = 0,
-                            EquipoId = 4,
-                            Goles = 16,
-                            Nombre = "Juan Pérez",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        },
-                        new
-                        {
-                            JugadorId = 8,
-                            Asistencias = 0,
-                            EquipoId = 4,
-                            Goles = 10,
-                            Nombre = "Ricardo López",
-                            NumeroCamiseta = 0,
-                            Posicion = "Delantero",
-                            Sueldo = 0m
-                        });
                 });
 
             modelBuilder.Entity("LigaPro.Models.Jugador", b =>
